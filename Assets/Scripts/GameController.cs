@@ -46,6 +46,18 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!MenuController.instance.isPaused)
+            {
+                MenuController.instance.PauseGame();
+            }
+            else
+            {
+                MenuController.instance.Hide();
+            }
+        }
+
         if (canSpawn)
         {
             SpawnBall();
